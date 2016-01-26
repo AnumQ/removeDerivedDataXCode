@@ -1,0 +1,15 @@
+#!/bin/bash
+
+echo "Removing contents in ~/Library/Developer/Xcode/DerivedData  ... "
+target=~/Library/Developer/Xcode/DerivedData
+rm -rf ~/Library/Developer/Xcode/DerivedData
+if [ -d "$target" ]; then
+  if test "$(ls -A "$target")"; then
+    echo "The directory is not empty. Try again"
+  else
+    echo "Done!"
+  fi
+else 
+  echo "Done!"
+fi
+
